@@ -1,0 +1,206 @@
+/*boiler plate project set-up*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+/***************/
+
+.section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    justify-content: space-evenly;
+}
+
+.video,
+.btns__panel {
+    height: 100%;
+    width: 100%;
+}
+
+.video {
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    filter: brightness(80%);
+}
+
+.scores,
+.main,
+.btns,
+.main__icons {
+    width: 100%;
+}
+
+.scores {
+    height: 15%;
+    padding: 0px 50px;
+    justify-content: space-between;
+}
+
+.scores__box {
+    height: 100%;
+    width: max-content;
+    padding: 40px 0px;
+    justify-content: space-evenly;
+}
+
+.main {
+    height: 70%;
+    justify-content: space-evenly;
+}
+
+.main__icons {
+    height: 65%;
+    padding: 0px 300px;
+    justify-content: space-between;
+}
+
+.icon { 
+    height: 350px;
+    width: 350px;
+}
+
+.icon--left {
+    transform: rotateY(180deg);
+}
+
+.btns {
+    position: relative;
+    height: 15%;  
+}
+
+.btns__panel {
+    position: absolute;
+}
+
+.btns__panel--ingame {
+    justify-content: space-evenly;
+}
+
+.btns__panel--ingame .btn {
+    margin-left: 55px;
+}
+
+.btn,
+.h1,
+.h2 {
+    font-family: 'Heebo';
+    color: #fff;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.btn {
+    height: max-content;
+    width: max-content;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 5px solid #fff;
+    background-color: transparent;
+    font-weight: 900;
+    font-size: 26px;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: rgb(10, 104, 104);
+}
+
+.btn:active {
+    background-color: transparent;
+    color: #fff;
+}
+
+.h1 {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.h2 {
+    font-size: 28px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.h2--thin {
+    font-weight: 300;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transition {
+    transition: all 0.3s;
+}
+
+.transition-fast {
+    transition: all 0.2s;
+}
+
+.hidden {
+    opacity: 0%;
+    visibility: hidden;
+    z-index: -10;
+}
+
+/*lasts 0.8 seconds*/
+.anim__shake {
+    animation: shake 0.2s;
+    animation-iteration-count: 4;
+}
+
+/*lasts 2.25 seconds*/
+.anim__updown--left {
+    animation: updown--left 0.75s;
+    animation-iteration-count: 3;
+}
+
+.anim__updown--right {
+    animation: updown--right 0.75s;
+    animation-iteration-count: 3;
+}
+
+@keyframes shake {
+    0% { transform: translate(3px, -3px); }
+    25% { transform: translate(-3px, 3px); }
+    50% { transform: translate(-3px, -3px); }
+    75% { transform: translate(3px, 3px); }
+    100% { transform: translate(-3px, -3px); }
+}
+
+@keyframes updown--left {
+    0% { transform: translateY(0px) rotateY(180deg)}
+    50% { transform: translateY(50px) rotateY(180deg)}
+    100% { transform: translateY(0px) rotateY(180deg)}
+}
+
+@keyframes updown--right {
+    0% { transform: translateY(0px)}
+    50% { transform: translateY(50px)}
+    100% { transform: translateY(0px)}
+}
